@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JenkinsNETWeb2", "JenkinsNE
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JenkinsNETWeb3", "JenkinsNETWeb3\JenkinsNETWeb3.csproj", "{4122E727-78D9-4B17-B658-CDB889CC7340}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ScriptCheck", "ScriptCheck", "{6FCA3635-F078-408C-9054-8645E7C7EEEA}"
+	ProjectSection(SolutionItems) = preProject
+		ScriptCheck\check.js = ScriptCheck\check.js
+		ScriptCheck\package.json = ScriptCheck\package.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

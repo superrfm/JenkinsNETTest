@@ -1,0 +1,14 @@
+{
+  "name": "scriptcheck",
+  "version": "1.0.0",
+  "description": "",
+  "main": "check.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "syntax-error": "^1.4.0"
+  }
+}
