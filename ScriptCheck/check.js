@@ -31,6 +31,11 @@ var walkSync = function (dir) {
     return error;
 };
 
-var error = walkSync('./JenkinsNETWeb3/app/');
+var error;
+
+process.argv.forEach((val, index) => {
+    if (index > 1)
+        error = walkSync(val);
+});
 
 if (error) process.exit(1);
