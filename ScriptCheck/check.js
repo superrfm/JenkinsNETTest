@@ -2,16 +2,16 @@
 var check = require('syntax-error');
 var path = require('path');
 
-var walkSync = function (dir) {
+var error = false;
 
-    var error = false;
+async function checkfiles (dir) {
 
     var fs = fs || require('fs'),
         files = fs.readdirSync(dir);
 
-    files.forEach(function (file) {
+    await Promise.all(files.map(async (file) => {
         if (fs.statSync(dir + file).isDirectory()) {
-            error = walkSync(dir + file + '/');
+            checkfiles(dir + file + '/');
         }
         else {
             if (!file.endsWith(".js")) return;
@@ -25,17 +25,22 @@ var walkSync = function (dir) {
                 console.error(Array(76).join('-'));
             }
         }
-    });
 
+    }));
 
-    return error;
 };
 
-var error;
 
-process.argv.forEach((val, index) => {
-    if (index > 1)
-        error = walkSync(val);
+async function processar() {
+    await process.argv.forEach(async (val, index) => {
+        if (index > 1)
+            await checkfiles(val);
+    });
+}
+
+var result = processar();
+result.then(() => {
+    if (error) process.exit(1);
 });
 
-if (error) process.exit(1);
+
