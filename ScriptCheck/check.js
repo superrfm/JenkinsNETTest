@@ -19,10 +19,10 @@ async function checkfiles (dir) {
             var src = fs.readFileSync(fullPath);
             var err = check(src, file);
             if (err) {
-                console.error('\x1b[31m',fullPath);
+                console.error(fullPath);
                 error = true;
-                console.error('\x1b[31m', err);
-                console.error('\x1b[31m',Array(76).join('-'));
+                console.error(err);
+                console.error(Array(76).join('-'));
             }
         }
 

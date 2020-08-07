@@ -1,6 +1,4 @@
 ﻿app.controller('demoController', function ($scope) {
-    $scope.Message = "Hello To AngularJS QuickStart"; ojij
-    test;
+    $scope.Message = "Hello To AngularJS QuickStart";
 
-    var teste = [{}{}]
 });
